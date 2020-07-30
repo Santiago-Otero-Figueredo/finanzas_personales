@@ -6,4 +6,5 @@ app_name = 'usuarios'
 
 urlpatterns = [
     path('prueba/', prueba, name='prueba')
+    #nada importante
 ]
