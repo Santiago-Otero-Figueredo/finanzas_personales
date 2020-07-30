@@ -1,0 +1,10 @@
+*.pyc
+*__pycache__
+__pycache__
+kairos/*/migrations/
+kairos/media/*
+media/*
+secrets.json
+.idea/
+*.bash
+.vscode
