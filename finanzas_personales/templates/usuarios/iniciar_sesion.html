@@ -1,0 +1,38 @@
+{% extends 'base.html'%}
+{% load static %}
+{% load bootstrap4 %}
+
+{% block titulo %}
+Iniciar Sesión
+{% endblock titulo %}
+
+{% block extracss %}    
+{% endblock extracss %}
+
+
+{% block miga_pan %}
+    <li class="breadcrumb-item active">Iniciar Sesion</li>    
+{% endblock miga_pan %}
+
+{% block titulo_pagina %}
+    <i class="icon-user icon-orange"></i> Iniciar Sesion
+{% endblock titulo_pagina %}
+
+{% block contenido %}
+    <div class="panel panel-inverse">
+        <div class="panel-body">
+            {% block contenido_panel %}
+                <div class="container">
+                    <form method="POST">
+                        {% csrf_token %}
+                        {% bootstrap_form form %}                        
+                        <button type="submit" class="btn btn-primary">Registrar</button>
+                    </form>
+                </div>
+            {% endblock contenido_panel %}
+        </div>
+    </div>
+{% endblock contenido %}    
+
+{% block extrajs %}
+{% endblock extrajs %}

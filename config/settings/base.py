@@ -47,6 +47,7 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
+    # Django
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -54,7 +55,11 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
 
-    'finanzas_personales.apps.usuarios'
+    # Terceros
+    'bootstrap4',
+
+    # Propios
+    'finanzas_personales.apps.usuarios',
 ]
 
 MIDDLEWARE = [

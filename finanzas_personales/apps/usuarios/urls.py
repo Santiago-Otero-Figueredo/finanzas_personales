@@ -1,10 +1,9 @@
 from django.urls import path
 
-from .views import prueba
+from .views import IniciarSesion
 
 app_name = 'usuarios'
 
 urlpatterns = [
-    path('prueba/', prueba, name='prueba')
-    #nada importante
+    path('iniciar_sesion/', IniciarSesion.as_view(), name='iniciar_sesion')    
 ]
