@@ -57,6 +57,7 @@ INSTALLED_APPS = [
 
     # Terceros
     'bootstrap4',
+    'tempus_dominus',
 
     # Propios
     'finanzas_personales.apps.usuarios',
@@ -153,3 +154,5 @@ else:
 LIB_VERSION = '4.0.5'
 CACHE_BACKEND = 'default'
 
+LOGIN_REDIRECT_URL = '/usuarios/pagina_principal/'
+LOGIN_URL = 'inicio_sesion'

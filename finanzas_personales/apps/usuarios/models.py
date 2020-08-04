@@ -17,6 +17,7 @@ class Usuario(AbstractUser):
         message="El numero debe tener entre 9 y 15 caracteres."
     )
     telefono = models.CharField(validators=[telefono_regex], max_length=17, blank=True)
+    fecha_nacimiento = models.DateTimeField(blank=False, null=False)
 
     USERNAME_FIELD = 'email'
     REQUIRED_FIELDS = ['first_name', 'last_name']
