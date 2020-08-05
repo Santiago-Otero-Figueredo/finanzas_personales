@@ -1,4 +1,4 @@
-{% extends 'base.html'%}
+{% extends 'base_user.html'%}
 {% load static %}
 {% load bootstrap4 %}
 
@@ -18,21 +18,28 @@ Iniciar Sesión
     <i class="icon-user icon-orange"></i> Iniciar Sesion
 {% endblock titulo_pagina %}
 
-{% block contenido %}
-    <div class="panel panel-inverse">
-        <div class="panel-body">
-            {% block contenido_panel %}
-                <div class="container">
+
+{% block contenido_panel %}
+    <div class="d-flex align-items-center min-vh-100">
+        <div class="container border rounded p-2">
+            <div class="row justify-content-center">
+                <div class="text-center">
+                    <h1>Iniciar Sesión</h1>
+                </div>
+                <div class="col-12 ">                   
                     <form method="POST">
                         {% csrf_token %}
-                        {% bootstrap_form form %}                        
-                        <button type="submit" class="btn btn-primary">Iniciar Sesión</button>
+                        {% bootstrap_form form %}   
+                        <div class="row justify-content-center">
+                            <button type="submit" class="btn btn-primary" align="center">Iniciar Sesión</button>
+                        </div>      
                     </form>
-                </div>
-            {% endblock contenido_panel %}
+                </div> 
+            </div>
         </div>
     </div>
-{% endblock contenido %}    
+{% endblock contenido_panel %}
+  
 
 {% block extrajs %}
 {% endblock extrajs %}

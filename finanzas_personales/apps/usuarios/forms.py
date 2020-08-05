@@ -1,5 +1,5 @@
 # Django
-from django.contrib.auth.forms import UserCreationForm
+from django.contrib.auth.forms import UserCreationForm, AuthenticationForm
 from django import forms
 
 # Terceros
@@ -9,6 +9,23 @@ from tempus_dominus.widgets import DatePicker
 from finanzas_personales.apps.usuarios.models import Usuario
 
 
+
+class FormularioInicioSesion(AuthenticationForm):
+    username = forms.EmailField(error_messages={
+        'required': 'Este campo es requerido',
+        'invalid': 'Introduzca un correo valido'
+    })
+    #password = forms.PasswordInput(label="Contraseña")
+
+    def __init__(self, *args, **kwargs):
+        super(FormularioInicioSesion, self).__init__(*args, **kwargs)
+        print(self.fields)
+        self.fields['username'].label =  "Correo eléctronico"
+        self.fields['password'].label = 'Contraseña'
+
+    class Meta:
+        model = Usuario
+        fields = ('username', 'password')
 
 class FormularioCreacionUsuario(UserCreationForm):
     fecha_nacimiento = forms.DateField(

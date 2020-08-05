@@ -11,7 +11,7 @@ from django.contrib.auth import logout
 
 # Propios
 from finanzas_personales.apps.usuarios.models import Usuario
-from .forms import FormularioCreacionUsuario
+from .forms import FormularioCreacionUsuario, FormularioInicioSesion
 
 class Registro(CreateView):
     model = Usuario
@@ -27,7 +27,7 @@ class Registro(CreateView):
 
 class IniciarSesion(LoginView):    
     template_name = 'usuarios/iniciar_sesion.html'    
-
+    form_class = FormularioInicioSesion
     def dispatch(self, request, *args, **kwargs):        
         if request.user.is_authenticated:            
             return redirect('usuarios:pagina_principal')
