@@ -20,7 +20,7 @@ Iniciar Sesión
 
 
 {% block contenido_panel %}
-    <div class="d-flex align-items-center min-vh-100">
+    <div class="d-flex align-items-center justify-content-center min-vh-100 m-0">
         <div class="container border rounded p-2">
             <div class="row justify-content-center">
                 <div class="text-center">
@@ -30,11 +30,16 @@ Iniciar Sesión
                     <form method="POST">
                         {% csrf_token %}
                         {% bootstrap_form form %}   
-                        <div class="row justify-content-center">
-                            <button type="submit" class="btn btn-primary" align="center">Iniciar Sesión</button>
+                        <div class="row no-gutters justify-content-center  ">
+                            <div class="mx-1">   
+                                <button type="submit" class="btn btn-success">Iniciar Sesión</button>
+                            </div>                            
+                            <div  class="mx-1">
+                                <a class="btn btn-outline-success" href="{% url 'usuarios:registro' %}">Registrate</a>
+                            </div>
                         </div>      
                     </form>
-                </div> 
+                </div>                
             </div>
         </div>
     </div>

@@ -61,6 +61,7 @@ INSTALLED_APPS = [
 
     # Propios
     'finanzas_personales.apps.usuarios',
+    'finanzas_personales.apps.template_tags',
 ]
 
 MIDDLEWARE = [

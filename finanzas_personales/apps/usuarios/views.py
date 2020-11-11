@@ -34,7 +34,7 @@ class IniciarSesion(LoginView):
         return super(IniciarSesion, self).dispatch(request, *args, **kwargs)
 
 class PaginaPrincipal(LoginRequiredMixin, TemplateView):
-    template_name = 'usuarios/pagina_principal.html'
+    template_name = 'usuarios/pagina_principal/index.html'
     
 def logout_view(request):
     logout(request)

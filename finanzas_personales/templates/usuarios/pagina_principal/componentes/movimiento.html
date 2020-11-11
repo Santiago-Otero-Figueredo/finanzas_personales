@@ -1,0 +1,32 @@
+{% load template_tags%}
+<div class="row mx-1 my-3 py-2 justify-content-center bloque-movimiento">
+    <div class="col row">
+        <div class="col-12 text-center">
+            <h5>Ingresos</h5>
+        </div>
+        <div class="col-12 text-center">
+            <h5 class="text-success">{{ingreso}}</h5>
+        </div>
+    </div>
+    <div class="col row">
+        <div class="col-12 text-center">
+            <h5>Gastos</h5>
+        </div>
+        <div class="col-12 text-center">
+            <h5 class="text-danger">{{gasto}}</h5>
+        </div>
+    </div>    
+    <div class="col row">
+        <div class="col-12 text-center">
+            <h5>Equilibrio</h5>
+        </div>
+        <div class="col-12 text-center">
+            {% restar_dos_numero ingreso gasto as equilibrio %}
+            {% if equilibrio >= 0%}
+                <h5 class="text-success">{{equilibrio}}</h5>
+            {% else %}
+                <h5 class="text-danger">{{equilibrio}}</h5>
+            {% endif %}
+        </div>
+    </div>
+</div>

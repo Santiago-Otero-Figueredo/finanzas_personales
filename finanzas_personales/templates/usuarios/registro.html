@@ -20,13 +20,16 @@ Registro de usuario
 
 
 {% block contenido_panel %}
-    <div class="container">
-
-        <form method="POST">
-            {% csrf_token %}
-            {% bootstrap_form form %}                        
-            <button type="submit" class="btn btn-primary">Registrar</button>
-        </form>
+    <div class="d-flex align-items-center justify-content-center min-vh-100">
+        <div class="container border rounded p-3">
+            <form method="POST">
+                {% csrf_token %}
+                {% bootstrap_form form %}
+                <div class="row justify-content-center">
+                    <button type="submit" class="btn btn-success">Registrar</button>
+                </div>
+            </form>
+        </div>
     </div>
 {% endblock contenido_panel %}
   

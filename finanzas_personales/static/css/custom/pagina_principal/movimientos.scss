@@ -1,0 +1,26 @@
+.bloque-movimiento{
+    border: 1px solid #d1d1d1;
+    border-radius: 12px;
+    box-shadow: 3px 3px 3px #828080;
+}
+
+.container-buttons{
+    position: absolute;
+    bottom: 0px;
+    left: 15px;
+}
+
+.button-action{
+    height: 65px;
+    width: 65px;    
+    border-radius: 50%;
+    display: inline-block;
+}
+
+.button-action-income{
+    background-color: greenyellow;
+}
+
+.button-action-expenses{
+    background-color: red;
+}

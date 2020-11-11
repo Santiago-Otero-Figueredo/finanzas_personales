@@ -20,12 +20,15 @@ class FormularioInicioSesion(AuthenticationForm):
     def __init__(self, *args, **kwargs):
         super(FormularioInicioSesion, self).__init__(*args, **kwargs)
         print(self.fields)
-        self.fields['username'].label =  "Correo eléctronico"
-        self.fields['password'].label = 'Contraseña'
+        self.fields['username'].widget.attrs['placeholder'] = 'Correo electrónico'
+        self.fields['password'].widget.attrs['placeholder'] = 'Contraseña'
+        self.fields['username'].label = ''
+        self.fields['password'].label = ''
 
     class Meta:
         model = Usuario
         fields = ('username', 'password')
+        
 
 class FormularioCreacionUsuario(UserCreationForm):
     fecha_nacimiento = forms.DateField(

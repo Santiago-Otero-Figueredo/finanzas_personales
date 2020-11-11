@@ -31,28 +31,30 @@
     {{ form.media }}
 </head>
 <body>   
+<div >    
+    <!-- begin breadcrumb -->
+    <ol class="breadcrumb float-xl-right">
+        {% block miga_pan %}
+            <li class="breadcrumb-item"><a href="javascript:;">Page Options</a></li>
+            <li class="breadcrumb-item active">Blank Page</li>
+        {% endblock miga_pan %}
+    </ol>
     
-        <!-- begin breadcrumb -->
-        <ol class="breadcrumb float-xl-right">
-            {% block miga_pan %}
-                <li class="breadcrumb-item"><a href="javascript:;">Page Options</a></li>
-                <li class="breadcrumb-item active">Blank Page</li>
-            {% endblock miga_pan %}
-        </ol>
-        
-        <h1 class="page-header mb-3">
-            {% block titulo_pagina %}
+    <h1 class="page-header mb-3">
+        {% block titulo_pagina %}
 
-            {% endblock titulo_pagina %}
-        </h1>        
-
-        {% block contenido %}
-            <div class="panel panel-inverse">
-                <div class="panel-body">
-                    {% block contenido_panel %}{% endblock contenido_panel %}
-                </div>
+        {% endblock titulo_pagina %}
+    </h1>        
+    
+    {% block contenido %}
+        <div class="panel panel-inverse">
+            <div class="panel-body">
+                {% block contenido_panel %}{% endblock contenido_panel %}
             </div>
-        {% endblock contenido %}        
+        </div>
+    {% endblock contenido %} 
+    {% block contenido_botones %}{% endblock contenido_botones %}   
+    
     <!-- end scroll to top btn -->   
 </div>
 

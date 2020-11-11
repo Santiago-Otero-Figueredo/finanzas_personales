@@ -1,0 +1,55 @@
+{% extends 'base.html'%}
+{% load static %}
+{% load bootstrap4 %}
+
+{% block titulo %}
+Pagina principal
+{% endblock titulo %}
+
+{% block extracss %}    
+    <link rel="stylesheet" href="{% static 'css/custom/pagina_principal/movimientos.css' %}">
+{% endblock extracss %}
+
+
+{% block miga_pan %}
+    <li class="breadcrumb-item active"><a href="{% url 'usuarios:cerrar_sesion'%}">Cerrar_sesion</a></li>    
+{% endblock miga_pan %}
+
+{% block titulo_pagina %}
+   
+{% endblock titulo_pagina %}
+
+    {% block contenido %}
+        <div class="panel panel-inverse">
+            <div class="panel-body">
+                {% block contenido_panel %}
+                    <div class="container">
+                    
+                    </div>
+                    <div class="container">
+                        {% include "usuarios/pagina_principal/componentes/movimiento.html" with ingreso=50000 gasto=12000%}
+                        {% include "usuarios/pagina_principal/componentes/movimiento.html" with ingreso=0 gasto=12000%}
+                        {% include "usuarios/pagina_principal/componentes/movimiento.html" with ingreso=50000 gasto=0%}
+                        {% include "usuarios/pagina_principal/componentes/movimiento.html" with ingreso=12000 gasto=12000%}
+                    </div>
+                    
+                {% endblock contenido_panel %}
+                
+            </div>            
+        </div>
+    {% endblock contenido %}  
+    {% block contenido_botones %}    
+        <div class="container row mb-5 justify-content-end container-buttons">
+            <div>
+                <div class="container">
+                    total
+                </div>
+            </div>
+            <a class="text-center mx-4 button-action button-action-income"></a>
+            <a class="ext-center mx-4 button-action button-action-expenses"></a>
+            
+        </div>
+    {% endblock contenido_botones %}    
+
+{% block extrajs %}
+{% endblock extrajs %}
