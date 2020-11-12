@@ -1,4 +1,4 @@
-# Django
+# Modulos Django
 from django.shortcuts import render, redirect
 from django.urls import reverse_lazy
 from django.contrib.auth.views import LoginView
@@ -7,11 +7,14 @@ from django.views.generic.base import TemplateView
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.contrib.auth import logout
 
-# Terceros
+# Modulos de plugin externos
 
-# Propios
+# Modulos de otras apps
 from finanzas_personales.apps.usuarios.models import Usuario
+from finanzas_personales.apps.movimientos.views import RegistrarMovimiento
+# Modulos internos de la app
 from .forms import FormularioCreacionUsuario, FormularioInicioSesion
+
 
 class Registro(CreateView):
     model = Usuario
@@ -30,11 +33,11 @@ class IniciarSesion(LoginView):
     form_class = FormularioInicioSesion
     def dispatch(self, request, *args, **kwargs):        
         if request.user.is_authenticated:            
-            return redirect('usuarios:pagina_principal')
+            return redirect('movimientos:registrar')
         return super(IniciarSesion, self).dispatch(request, *args, **kwargs)
 
-class PaginaPrincipal(LoginRequiredMixin, TemplateView):
-    template_name = 'usuarios/pagina_principal/index.html'
+#class PaginaPrincipal(LoginRequiredMixin, TemplateView):
+#    template_name = 'usuarios/pagina_principal/index.html'
     
 def logout_view(request):
     logout(request)

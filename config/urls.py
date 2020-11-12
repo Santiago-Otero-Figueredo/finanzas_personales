@@ -26,5 +26,6 @@ from finanzas_personales.apps.usuarios.views import IniciarSesion
 urlpatterns = [
     path('', IniciarSesion.as_view(), name="inicio_sesion"),
     path('admin/', admin.site.urls),
-    path('usuarios/', include('finanzas_personales.apps.usuarios.urls', namespace='usuarios'))
+    path('usuarios/', include('finanzas_personales.apps.usuarios.urls', namespace='usuarios')),
+    path('movimientos/', include('finanzas_personales.apps.movimientos.urls', namespace='movimientos'))
 ]

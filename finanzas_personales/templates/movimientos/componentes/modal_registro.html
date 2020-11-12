@@ -1,0 +1,23 @@
+{% load bootstrap4 %}
+<div class="modal fade" id="registro_movimiento" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content row">
+            <div class="modal-header text-center gradiente">                
+                <h1 class="modal-title col-12" id="registro_movimiento_titulo">
+                    <i style="font-size: 6rem; color: white; " class="fa fa-exclamation-triangle"></i>
+                </h1>                    
+            </div>
+            <div class="modal-body text-center">
+                <h3 style="color: black; font-weight: bolder;"><strong>Registro movimiento</strong></h3>
+                <p class="h5">----------------------------------</p>
+                <form method="POST" class="container"> {%csrf_token%}
+                    {%bootstrap_form form%}
+                    <div class="modal-footer row justify-content-center">
+                        <a class="col btn btn-danger pl-5 pr-5" style="color: white; cursor: pointer;" data-dismiss="modal">X</a>
+                        <button type="submit" class=" col btn btn-green pl-5 pr-5" id="siguiente_cuarto" onclick="" >Y</button>
+                    </div>
+                </form>
+            </div>            
+        </div>
+    </div>
+</div>

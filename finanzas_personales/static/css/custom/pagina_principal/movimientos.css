@@ -5,24 +5,53 @@
           box-shadow: 3px 3px 3px #828080;
 }
 
+.bloque-movimiento > div:first-child {
+  border-right: 2px solid white;
+  margin-right: 0;
+  padding-right: 0;
+}
+
 .container-buttons {
-  position: absolute;
+  position: fixed;
   bottom: 0px;
   left: 15px;
 }
 
+.container-total {
+  background-color: white;
+  position: fixed;
+  left: 15px;
+  bottom: 0px;
+  height: 85px;
+  width: 200px;
+}
+
+.empy-container {
+  height: 85px;
+}
+
 .button-action {
-  height: 65px;
-  width: 65px;
+  height: 70px;
+  width: 70px;
   border-radius: 50%;
   display: inline-block;
 }
 
 .button-action-income {
-  background-color: greenyellow;
+  background-color: #068F2A;
 }
 
 .button-action-expenses {
-  background-color: red;
+  background-color: #DB1217;
+}
+
+.income {
+  background-color: rgba(6, 143, 42, 0.7);
+  border: 1px solid #d1d1d1;
+}
+
+.expenses {
+  background-color: rgba(219, 18, 23, 0.7);
+  border: 1px solid #d1d1d1;
 }
 /*# sourceMappingURL=movimientos.css.map */

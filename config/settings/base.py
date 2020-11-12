@@ -58,10 +58,12 @@ INSTALLED_APPS = [
     # Terceros
     'bootstrap4',
     'tempus_dominus',
+    'django.contrib.humanize',
 
     # Propios
     'finanzas_personales.apps.usuarios',
-    'finanzas_personales.apps.template_tags',
+    'finanzas_personales.apps.movimientos',
+    'finanzas_personales.apps.template_tags',    
 ]
 
 MIDDLEWARE = [
@@ -72,6 +74,8 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+
+    'django_currentuser.middleware.ThreadLocalUserMiddleware',
 ]
 
 ROOT_URLCONF = 'config.urls'

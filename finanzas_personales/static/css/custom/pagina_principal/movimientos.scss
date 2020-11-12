@@ -1,26 +1,63 @@
+$primay-green:#068F2A;
+$primay-red:#DB1217;
+$secundary-green: rgba($primay-green, 0.7);
+$secundary-red: rgba($primay-red, 0.7);
+
+$primary-border-color : #d1d1d1; 
+$primary-shadow-color : #828080; 
+
 .bloque-movimiento{
-    border: 1px solid #d1d1d1;
+    border: 1px solid $primary-border-color;
     border-radius: 12px;
-    box-shadow: 3px 3px 3px #828080;
+    box-shadow: 3px 3px 3px $primary-shadow-color;
+}
+
+.bloque-movimiento > div:first-child{
+    border-right: 2px solid white;
+    margin-right: 0;
+    padding-right: 0;
 }
 
 .container-buttons{
-    position: absolute;
+    position: fixed;
     bottom: 0px;
     left: 15px;
 }
 
+.container-total{  
+    background-color: white;
+    position: fixed;  
+    left: 15px;
+    bottom: 0px;
+    height: 85px;
+    width: 200px;
+}
+
+.empy-container{
+    height: 85px;    
+}
+
 .button-action{
-    height: 65px;
-    width: 65px;    
+    height: 70px;
+    width: 70px;    
     border-radius: 50%;
     display: inline-block;
 }
 
 .button-action-income{
-    background-color: greenyellow;
+    background-color: $primay-green;
 }
 
 .button-action-expenses{
-    background-color: red;
+    background-color: $primay-red;
+}
+
+.income{
+    background-color: $secundary-green;
+    border: 1px solid $primary-border-color;
+}
+  
+.expenses{
+    background-color: $secundary-red;
+    border: 1px solid $primary-border-color;
 }

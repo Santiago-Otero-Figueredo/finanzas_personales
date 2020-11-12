@@ -1,0 +1,57 @@
+{% extends 'base.html'%}
+{% load static %}
+{% load template_tags%}
+{% load bootstrap4 %}
+{% load humanize %}
+
+{% block titulo %}
+Pagina principal
+{% endblock titulo %}
+
+{% block extracss %}    
+    <link rel="stylesheet" href="{% static 'css/custom/pagina_principal/movimientos.css' %}">
+{% endblock extracss %}
+
+
+{% block miga_pan %}
+    <li class="breadcrumb-item active"><a href="{% url 'usuarios:cerrar_sesion'%}">Cerrar_sesion</a></li>    
+{% endblock miga_pan %}
+
+{% block titulo_pagina %}
+   
+{% endblock titulo_pagina %}
+
+    {% block contenido %}
+        <div class="panel panel-inverse">
+            <div class="panel-body">
+                {% block contenido_panel %}                    
+                    {%for movimiento in movimientos %}
+                        {% include "movimientos/componentes/movimiento.html" with cantidad=movimiento.cantidad tipo=movimiento.tipo.nombre descripcion=movimiento.descripcion%}                    
+                    {%endfor%}                                  
+                {% endblock contenido_panel %}
+                <div class="empy-container">
+
+                </div>
+            </div>            
+        </div>
+    {% endblock contenido %}  
+    {% block contenido_botones %}    
+        <div class="container row mb-5 justify-content-start">
+            <div class="bloque-movimiento container-total mb-5 ml-2">
+                <h5 class="text-center">TOTAL:</h5>
+                
+                <h2 class="text-center {%if request.user.id|calcular_diferencia >= 0%}text-success{%else%}text-danger{%endif%}">${{request.user.id|calcular_diferencia|intcomma}}</h2>
+            </div>
+        </div>
+        <div class="container row mb-5 justify-content-end container-buttons">            
+            <a class="text-center mx-2 button-action button-action-income"></a>            
+        </div>
+        <div>
+            {% include "movimientos/componentes/modal_registro.html" with form=form%}
+        </div>
+        
+    {% endblock contenido_botones %}    
+
+{% block extrajs %}    
+    <script src="{% static 'js/custom/movimientos/registrar_movimiento.js' %}"></script>
+{% endblock extrajs %}

@@ -1,0 +1,30 @@
+{% load template_tags%}
+{% load humanize %}
+<div class="row mx-3 my-3 py-2 justify-content-center bloque-movimiento {% if tipo == 'Gasto' %}expenses{%else%}income{%endif%}">
+    <div class="col row">
+        <div class="col-12 text-center">
+            <h5 class="text-light">Cantidad</h5>
+        </div>
+        <div class="col-12 text-center">
+            <h5>${{cantidad|intcomma}}</h5>
+        </div>
+    </div>
+    <!--
+    <div class="col row">
+        <div class="col-12 text-center">
+            <h5>Gastos</h5>
+        </div>
+        <div class="col-12 text-center">
+            <h5 class="text-danger">{{gasto}}</h5>
+        </div>
+    </div>  
+    -->  
+    <div class="col row">
+        <div class="col-12 text-center">
+            <h5 class="text-light">Descripción</h5>
+        </div>
+        <div class="col-12 text-center">            
+            <h5>{{descripcion}}</h5>           
+        </div>
+    </div>
+</div>
