@@ -41,7 +41,7 @@ DEBUG = get_secret("DEBUG")
 
 AUTH_USER_MODEL = 'usuarios.Usuario'
 
-ALLOWED_HOSTS = ['63f7ccf6773a.ngrok.io', 'localhost']
+ALLOWED_HOSTS = ['63f7ccf6773a.ngrok.io', 'localhost', '127.0.0.1']
 
 
 # Application definition

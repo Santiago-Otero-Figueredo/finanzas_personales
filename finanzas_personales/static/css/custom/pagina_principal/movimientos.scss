@@ -44,8 +44,20 @@ $primary-shadow-color : #828080;
     display: inline-block;
 }
 
+.mas{
+    color: #fff;
+    font-size: 100px;
+    padding-bottom: 8px;
+    cursor: pointer;
+}
+
 .button-action-income{
     background-color: $primay-green;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    cursor: pointer;
 }
 
 .button-action-expenses{

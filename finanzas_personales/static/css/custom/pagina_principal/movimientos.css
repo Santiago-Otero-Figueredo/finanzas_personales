@@ -37,8 +37,26 @@
   display: inline-block;
 }
 
+.mas {
+  color: #fff;
+  font-size: 100px;
+  padding-bottom: 8px;
+  cursor: pointer;
+}
+
 .button-action-income {
   background-color: #54c242;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 10px;
+  cursor: pointer;
 }
 
 .button-action-expenses {
