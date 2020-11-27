@@ -23,7 +23,7 @@ class RegistrarMovimiento(CreateView,LoginRequiredMixin):
 
     def get_context_data(self, **kwargs):
         context = super(RegistrarMovimiento, self).get_context_data(**kwargs)
-        movimientos = Movimiento.objects.filter(usuario=self.request.user)
+        movimientos = Movimiento.objects.filter(usuario=self.request.user).order_by('-fecha_inscripcion')
         context['movimientos'] = movimientos
         return context
 

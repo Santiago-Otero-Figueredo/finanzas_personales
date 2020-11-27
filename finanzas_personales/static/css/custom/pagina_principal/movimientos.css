@@ -38,20 +38,20 @@
 }
 
 .button-action-income {
-  background-color: #068F2A;
+  background-color: #54c242;
 }
 
 .button-action-expenses {
-  background-color: #DB1217;
+  background-color: #f44336;
 }
 
 .income {
-  background-color: rgba(6, 143, 42, 0.7);
+  background-color: rgba(84, 194, 66, 0.7);
   border: 1px solid #d1d1d1;
 }
 
 .expenses {
-  background-color: rgba(219, 18, 23, 0.7);
+  background-color: rgba(244, 67, 54, 0.7);
   border: 1px solid #d1d1d1;
 }
 /*# sourceMappingURL=movimientos.css.map */

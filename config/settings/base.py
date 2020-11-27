@@ -41,7 +41,7 @@ DEBUG = get_secret("DEBUG")
 
 AUTH_USER_MODEL = 'usuarios.Usuario'
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['63f7ccf6773a.ngrok.io', 'localhost']
 
 
 # Application definition
@@ -63,7 +63,9 @@ INSTALLED_APPS = [
     # Propios
     'finanzas_personales.apps.usuarios',
     'finanzas_personales.apps.movimientos',
-    'finanzas_personales.apps.template_tags',    
+    'finanzas_personales.apps.funcionalidades',
+    'finanzas_personales.apps.template_tags',
+    
 ]
 
 MIDDLEWARE = [
@@ -91,6 +93,7 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
+                'django.template.context_processors.media',
             ],
         },
     },
@@ -159,5 +162,5 @@ else:
 LIB_VERSION = '4.0.5'
 CACHE_BACKEND = 'default'
 
-LOGIN_REDIRECT_URL = '/usuarios/pagina_principal/'
+LOGIN_REDIRECT_URL = '/movimientos/registrar'
 LOGIN_URL = 'inicio_sesion'

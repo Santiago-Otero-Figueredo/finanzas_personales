@@ -17,12 +17,14 @@
     <meta content="" name="author" />
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     {% block css %}
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
         <link rel="stylesheet" href="{% static 'css/bootstrap/bootstrap.css' %}">
         <link rel="stylesheet" href="{% static 'css/bootstrap/bootstrap-grid.css' %}">
         <link rel="stylesheet" href="{% static 'css/bootstrap/bootstrap-grid.min.css' %}">
         <link rel="stylesheet" href="{% static 'css/bootstrap/bootstrap-reboot.css' %}">
         <link rel="stylesheet" href="{% static 'css/bootstrap/bootstrap-reboot.min.css' %}">
         <link rel="stylesheet" href="{% static 'css/bootstrap/bootstrap.min.css' %}">
+        <link rel="stylesheet" href="{% static 'css/custom/barra_navegacion/barra_navegacion.css' %}">
     {% endblock css %}
 
     {% block extracss %}    
@@ -33,16 +35,37 @@
 <body>   
 <div>    
     <!-- begin breadcrumb -->
-    <ol class="breadcrumb float-xl-right">
-        {% block miga_pan %}
-            <li class="breadcrumb-item"><a href="javascript:;">Page Options</a></li>
-            <li class="breadcrumb-item active">Blank Page</li>
-        {% endblock miga_pan %}
-    </ol>
-    
-    <h1 class="page-header mb-3">
-        {% block titulo_pagina %}
+    {% block header %}
+     
+            <div class="container-navbar">
+                <header class="header"></header>
+                <input type="checkbox" name="" id="check">
+                <label for="check" href="javascript:void(0);">&#9776;</label>     
+                <div class="menu-background"></div>    
+                                  
+                <nav class="menu">
+                    <div class="menu-header">
+                        <img src="{{MEDIA_URL}}iconos/logo.png" alt="" class="w-50 h-50 mt-4 ml-4">
+                        <h6 class="text-center mt-3">{{request.user}}</h6>
+                    </div> 
+                    <ul class="m-0 pl-2 pt-0 pr-0 pb-0 container-options">
+                        <li><i class="fa fa-money icons"></i><a href="{% url 'movimientos:registrar'%}" class="text-decoration-none">Movimientos</a></li>
+                        <li><i class="fa fa-line-chart icons"></i>Gráficos</li>
+                        <li><i class="fa fa-flag icons icons"></i>Retos</li>
+                        <li><i class="fa fa fa-gear icons"></i>Configuración</li>
+                        <li><i class="fa fa-cubes icons"></i>Analitica</li>  
+                        <li><i class="fa fa-calculator icons"></i><a href="{% url 'funcionalidades:calculadora_intereses'%}" class="text-decoration-none">Calculadora</a></li>                      
+                        <li><i class="fa fa-star icons"></i>Actualizate a Premium</li>      
+                        <li><i class="fa fa-user-times icons"></i><a href="{% url 'usuarios:cerrar_sesion'%}" class="text-decoration-none">Cerra sesion</a></li>
+                    </ul>
+                </nav>
+            </div>
+        
+    {% endblock header%}
 
+      
+    <h1 class="page-header mb-3">       
+        {% block titulo_pagina %}
         {% endblock titulo_pagina %}
     </h1>        
     
@@ -81,6 +104,7 @@
         {% endfor %}
     });
     $('form').attr('autocomplete','off');
+  
 </script>
 
 {% block js %}

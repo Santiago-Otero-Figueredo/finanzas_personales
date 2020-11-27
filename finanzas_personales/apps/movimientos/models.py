@@ -29,5 +29,5 @@ class Movimiento(models.Model):
     @staticmethod
     def obtener_suma_movimientos(id_usuario, tipo):
         from django.db.models import Sum
-        movimiento = Movimiento.objects.filter(tipo__nombre=tipo, usuario__pk=id_usuario).aggregate(total=Sum('cantidad'))        
+        movimiento = Movimiento.objects.filter(tipo__nombre=tipo, usuario__pk=id_usuario).aggregate(total=Sum('cantidad'))
         return movimiento['total']

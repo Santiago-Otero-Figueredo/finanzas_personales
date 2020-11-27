@@ -13,12 +13,8 @@ Pagina principal
 {% endblock extracss %}
 
 
-{% block miga_pan %}
-    <li class="breadcrumb-item active"><a href="{% url 'usuarios:cerrar_sesion'%}">Cerrar_sesion</a></li>    
-{% endblock miga_pan %}
-
-{% block titulo_pagina %}
-   
+{% block titulo_pagina %}    
+    <h3 class="text-center">Movimientos</h3>
 {% endblock titulo_pagina %}
 
     {% block contenido %}
@@ -40,7 +36,7 @@ Pagina principal
             <div class="bloque-movimiento container-total mb-5 ml-2">
                 <h5 class="text-center">TOTAL:</h5>
                 
-                <h2 class="text-center {%if request.user.id|calcular_diferencia >= 0%}text-success{%else%}text-danger{%endif%}">${{request.user.id|calcular_diferencia|intcomma}}</h2>
+                <h3 class="text-center {%if request.user.id|calcular_diferencia >= 0%}text-success{%else%}text-danger{%endif%}">${{request.user.id|calcular_diferencia|intcomma}}</h3>
             </div>
         </div>
         <div class="container row mb-5 justify-content-end container-buttons">            

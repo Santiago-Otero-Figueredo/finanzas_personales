@@ -1,0 +1,18 @@
+.summary-data {
+  font-size: 12px;
+  padding-top: 15px;
+  margin: 0;
+  padding-right: 0;
+  padding-left: 0;
+  line-height: 5px;
+}
+
+.summary-data p:nth-child(2n-1) {
+  font-weight: bolder;
+}
+
+#increase, #interests, #total_payment, #monthly_fee_value {
+  color: red;
+  font-weight: bold;
+}
+/*# sourceMappingURL=calculadora_intereses.css.map */

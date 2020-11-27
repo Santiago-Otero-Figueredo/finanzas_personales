@@ -16,6 +16,8 @@ Including another URLconf
 # Django
 from django.contrib import admin
 from django.urls import path, include
+from django.conf.urls.static import static
+from django.conf import settings
 
 # Terceros
 
@@ -27,5 +29,7 @@ urlpatterns = [
     path('', IniciarSesion.as_view(), name="inicio_sesion"),
     path('admin/', admin.site.urls),
     path('usuarios/', include('finanzas_personales.apps.usuarios.urls', namespace='usuarios')),
-    path('movimientos/', include('finanzas_personales.apps.movimientos.urls', namespace='movimientos'))
-]
+    path('movimientos/', include('finanzas_personales.apps.movimientos.urls', namespace='movimientos')),
+    path('funcionalidades/', include('finanzas_personales.apps.funcionalidades.urls', namespace='funcionalidades')),
+] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+

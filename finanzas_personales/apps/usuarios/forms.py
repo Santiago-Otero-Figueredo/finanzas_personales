@@ -41,7 +41,7 @@ class FormularioCreacionUsuario(UserCreationForm):
             },
             attrs={
                 'append': 'fa fa-calendar',
-                'icon_toggle': False,
+                'icon_toggle': False,                
             },
         ),
        
