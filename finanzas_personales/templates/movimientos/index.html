@@ -23,7 +23,7 @@ Pagina principal
                 {% block contenido_panel %}                    
                     {%for movimiento in movimientos %}
                         {% include "movimientos/componentes/movimiento.html" with cantidad=movimiento.cantidad tipo=movimiento.tipo.nombre descripcion=movimiento.descripcion%}                    
-                    {%endfor%}                                  
+                    {%endfor%}
                 {% endblock contenido_panel %}
                 <div class="empy-container">
 

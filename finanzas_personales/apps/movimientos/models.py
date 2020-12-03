@@ -20,7 +20,7 @@ class Tipo(models.Model):
         return self.nombre
 
 class Movimiento(models.Model):
-    usuario = CurrentUserField()
+    usuario = CurrentUserField(related_name="movimiento_usuario")
     tipo = models.ForeignKey(Tipo, verbose_name="Tipo movimiento", related_name="movimiento_tipo", on_delete=models.CASCADE, blank=False, null=False)
     cantidad = models.DecimalField(decimal_places=2, max_digits=12, validators=[MaxValueValidator(Decimal('100000000000.00')), MinValueValidator(Decimal('0.00'))])
     descripcion = models.CharField(max_length=30, verbose_name="Descripción", blank=False, null=False)
@@ -31,7 +31,7 @@ class Movimiento(models.Model):
         from django.db.models import Sum
         movimiento = Movimiento.objects.filter(tipo__nombre=tipo, usuario__pk=id_usuario).aggregate(total=Sum('cantidad'))
         
-        print(movimiento)
+      
         if  movimiento['total']:
             return movimiento['total']
         else:

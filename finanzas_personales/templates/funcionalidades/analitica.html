@@ -1,0 +1,53 @@
+{% extends 'base.html'%}
+{% load static %}
+{% load template_tags%}
+{% load bootstrap4 %}
+{% load humanize %}
+
+{% block titulo %}
+Pagina principal
+{% endblock titulo %}
+
+{% block extracss %}    
+<link rel="stylesheet" href="{% static 'css/custom/funcionalidades/calculadora_intereses/calculadora_intereses.css' %}">
+<style>
+    #grafica_movimientos{
+        width: 100%;
+        height: 500px;
+    }
+</style>
+{% endblock extracss %}
+
+
+{% block titulo_pagina %}    
+    <h3 class="text-center">Analitica</h3>
+{% endblock titulo_pagina %}
+
+    {% block contenido %}
+        <div class="panel panel-inverse">
+            <div class="row justify-content-center panel-body m-0">
+                <div id="grafica_movimientos"></div>
+            </div>            
+            <div class="row justify-content-center panel-body m-0">
+                <div class=" p-5" id="grafica_tortas"></div>
+            </div>
+        </div>
+    {% endblock contenido %}  
+
+    {% block contenido_botones %}
+    {% endblock contenido_botones %}    
+
+{% block extrajs %}    
+<script src="https://cdn.amcharts.com/lib/4/core.js"></script>
+<script src="https://cdn.amcharts.com/lib/4/charts.js"></script>
+<script src="https://cdn.amcharts.com/lib/4/themes/animated.js"></script>
+
+<script>
+    var movimientos = {{movimientos|safe}};
+    var grafica_tortas = {{tortas|safe}}
+</script>
+<script src="{% static 'js/custom/graficas/barras_agrupadas.js'%}"></script>
+<script src="{% static 'js/custom/graficas/torta.js'%}"></script> 
+
+{% endblock extrajs %}
+
