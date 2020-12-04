@@ -63,6 +63,7 @@
 
 .menu{
     position: fixed;
+    color: #4d4d4d;
     top: 60px;
     left: -1px;
     width: 0vw;
@@ -77,11 +78,15 @@
 .menu li{
     list-style: none;
     padding: 2px;
-    color: black;
+    color: #4d4d4d;
     cursor: pointer;
     transition: all 300ms;
     display: block;
     width: 75vw;
+}
+
+.menu li a{  
+    color: #4d4d4d;    
 }
 
 .menu li:hover{
@@ -90,7 +95,7 @@
 
 .menu-header{
     height: 200px;
-    background-color: #54c242;
+    background-color: lightgray;
     width: 75vw;    
 }
 
@@ -105,7 +110,7 @@
     font-weight: bolder;
 }
 .container-options > li a{
-    color: black;
+    color: #4d4d4d; 
 }
 .container-options li:nth-child(1) i{
     color:#41d12e;

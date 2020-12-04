@@ -36,15 +36,16 @@ class Usuario(AbstractUser):
     
     def obtener_suma_cantidad_movimientos(self):
         from django.db.models import Sum
+        lista_retorno = []
         ingresos = self.movimiento_usuario.filter(tipo__nombre='Ingreso').aggregate(total=Sum('cantidad'))
         gastos = self.movimiento_usuario.filter(tipo__nombre='Gasto').aggregate(total=Sum('cantidad'))
-
-        lista_retorno = [ {
-            "category": "ingresos",
-            "cantidad": float(ingresos['total'])},
-            {"grafica_tortas": "gastos",
-            "cantidad": float(gastos['total'])}
-        ]
+        if ingresos['total'] and gastos['total']:
+            lista_retorno = [ {
+                "category": "ingresos",
+                "cantidad": float(ingresos['total'])},
+                {"grafica_tortas": "gastos",
+                "cantidad": float(gastos['total'])}
+            ]
         return lista_retorno
     
     def obtener_rendimientos_rango_fecha(self, fecha_inicio, fecha_fin):
@@ -59,11 +60,12 @@ class Usuario(AbstractUser):
         while mes_inicio <= mes_fin:
             ingresos = self.obtener_suma_cantidad_movimientos_anio_mes(anio=anio_inicio, mes=mes_inicio, tipo='Ingreso')
             gastos = self.obtener_suma_cantidad_movimientos_anio_mes(anio=anio_inicio, mes=mes_inicio, tipo='Gasto')
-            lista_retorno.append({
-                'category': lista_meses[mes_inicio-1],
-                'ingresos': int(ingresos['total']/1000),
-                'gastos': int(gastos['total']/1000),
-            })           
+            if ingresos['total'] and gastos['total']:
+                lista_retorno.append({
+                    'category': lista_meses[mes_inicio-1],
+                    'ingresos': int(ingresos['total']/1000),
+                    'gastos': int(gastos['total']/1000),
+                })           
             mes_inicio += 1
         for l in lista_retorno:
             print(l)  

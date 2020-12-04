@@ -6,7 +6,7 @@
 }
 
 .bloque-movimiento > div:first-child {
-  border-right: 2px solid white;
+  border-right: 2px solid lightgray;
   margin-right: 0;
   padding-right: 0;
 }
@@ -45,7 +45,7 @@
 }
 
 .button-action-income {
-  background-color: #54c242;
+  background-color: #0DD9A7;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -64,12 +64,12 @@
 }
 
 .income {
-  background-color: rgba(84, 194, 66, 0.7);
-  border: 1px solid #d1d1d1;
+  border: 1px solid rgba(13, 217, 167, 0.7);
+  color: #4d4d4d;
 }
 
 .expenses {
-  background-color: rgba(244, 67, 54, 0.7);
-  border: 1px solid #d1d1d1;
+  border: 1px solid #FAB030;
+  color: #4d4d4d;
 }
 /*# sourceMappingURL=movimientos.css.map */

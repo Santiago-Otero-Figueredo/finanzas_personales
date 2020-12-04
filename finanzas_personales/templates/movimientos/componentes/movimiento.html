@@ -3,18 +3,18 @@
 <div class="row mx-3 my-3 py-2 justify-content-center bloque-movimiento {% if tipo == 'Gasto' %}expenses{%else%}income{%endif%}">
     <div class="col row">
         <div class="col-12 text-center">
-            <h5 class="text-light">Cantidad</h5>
+            <h6>Cantidad</h6>
         </div>
         <div class="col-12 text-center">
-            <h5>${{cantidad|intcomma}}</h5>
+            <h6>${{cantidad|intcomma}}</h6>
         </div>
     </div>  
     <div class="col row">
         <div class="col-12 text-center">
-            <h5 class="text-light">Descripción</h5>
+            <h6 >Descripción</h6>
         </div>
         <div class="col-12 text-center">            
-            <h5>{{descripcion}}</h5>           
+            <h6>{{descripcion}}</h6>           
         </div>
     </div>
 </div>

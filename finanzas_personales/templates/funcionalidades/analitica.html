@@ -20,16 +20,22 @@ Pagina principal
 
 
 {% block titulo_pagina %}    
-    <h3 class="text-center">Analitica</h3>
+    <h3 class="text-center"></h3>
 {% endblock titulo_pagina %}
 
     {% block contenido %}
         <div class="panel panel-inverse">
             <div class="row justify-content-center panel-body m-0">
+                <div class="text-center">
+                    <h5>Cantidad ($ miles) vs Meses</h5>
+                </div>
                 <div id="grafica_movimientos"></div>
             </div>            
-            <div class="row justify-content-center panel-body m-0">
-                <div class=" p-5" id="grafica_tortas"></div>
+            <div class="row justify-content-center panel-body m-0 border-top">
+                <div class="text-center">
+                    <h5>Ingresos vs Gastos</h5>
+                </div>
+                <div id="grafica_tortas"  style="width: 500px;"></div>
             </div>
         </div>
     {% endblock contenido %}  

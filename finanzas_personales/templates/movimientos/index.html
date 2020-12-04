@@ -33,10 +33,10 @@ Pagina principal
     {% endblock contenido %}  
     {% block contenido_botones %}    
         <div class="container row mb-5 justify-content-start">
-            <div class="bloque-movimiento container-total mb-5 ml-2">
-                <h5 class="text-center">TOTAL:</h5>
+            <div class="bloque-movimiento container-total mb-5 ml-2 ">
+                <h6 class="text-center mt-2">TOTAL:</h6>
                 
-                <h3 class="text-center {%if request.user.id|calcular_diferencia >= 0%}text-success{%else%}text-danger{%endif%}">${{request.user.id|calcular_diferencia|intcomma}}</h3>
+                <h4 class="text-center {%if request.user.id|calcular_diferencia >= 0%}text-success{%else%}text-danger{%endif%}">${{request.user.id|calcular_diferencia|intcomma}}</h4>
             </div>
         </div>
         <div class="container row mb-5 justify-content-end container-buttons">            

@@ -1,4 +1,4 @@
-$primay-green:#54c242;
+$primay-green:#0DD9A7;
 $primay-red:#f44336;
 $secundary-green: rgba($primay-green, 0.7);
 $secundary-red: rgba($primay-red, 0.7);
@@ -10,10 +10,11 @@ $primary-shadow-color : #828080;
     border: 1px solid $primary-border-color;
     border-radius: 12px;
     box-shadow: 3px 3px 3px $primary-shadow-color;
+    
 }
 
 .bloque-movimiento > div:first-child{
-    border-right: 2px solid white;
+    border-right: 2px solid lightgray;
     margin-right: 0;
     padding-right: 0;
 }
@@ -65,11 +66,15 @@ $primary-shadow-color : #828080;
 }
 
 .income{
-    background-color: $secundary-green;
-    border: 1px solid $primary-border-color;
+    //background-color: $secundary-green;
+    //border: 1px solid $primary-border-color;
+    border: 1px solid $secundary-green;
+    color: #4d4d4d;
 }
   
 .expenses{
-    background-color: $secundary-red;
-    border: 1px solid $primary-border-color;
+    //background-color: $secundary-red;
+    //border: 1px solid $primary-border-color;
+    border: 1px solid #FAB030;
+    color: #4d4d4d;
 }
