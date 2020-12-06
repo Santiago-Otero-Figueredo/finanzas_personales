@@ -8,7 +8,7 @@
 
 .container-navbar {
   width: 100%;
-  background-color: #54c242;
+  background-color: lightgray;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -33,7 +33,7 @@
   position: fixed;
   left: 0;
   top: 0;
-  background-color: #54c242;
+  background-color: lightgray;
   z-index: 10;
 }
 
